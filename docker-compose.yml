@@ -1,0 +1,14 @@
+version: "3.7"
+ 
+services:
+  node-ts-otimizado:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cronjob
+    volumes:
+      - ./src:/app/src
+    ports:
+      - "8080:8080"
+      - "8181:8181"
+    command: npm run start
